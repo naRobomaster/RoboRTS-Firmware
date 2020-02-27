@@ -51,7 +51,7 @@ extern int ulog_console_backend_init(void);
 
 void system_config(void)
 {
-  glb_sys_cfg = HAL_GPIO_ReadPin(SYS_CFG_Port, SYS_CFG_Pin);
+  glb_sys_cfg = CHASSIS_APP; //HAL_GPIO_ReadPin(SYS_CFG_Port, SYS_CFG_Pin);
 }
 
 uint8_t get_sys_cfg(void)
