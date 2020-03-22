@@ -85,7 +85,7 @@ int32_t detect_device_check(detect_device_t detect_dev, uint32_t event)
     {
       if ((offline_get_ms() - detect_dev->last_time[i]) > detect_dev->timeout[i])
       {
-        detect_dev->event |= temp;
+        detect_dev->event &= ~temp; //detect_dev->event |= temp;
 
         if ((detect_dev->offline_callback[i] != NULL) && (callback_execute == 0))
         {
